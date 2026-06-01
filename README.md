@@ -12,6 +12,68 @@ Develop a Machine Learning model to predict stroke risk using patient demographi
 
 ---
 
+## Quick start
+
+```bash
+pip install -r requirements.txt
+python main.py --download   # fetch dataset, then train & evaluate
+```
+
+See **[HOW_TO_RUN.md](HOW_TO_RUN.md)** for full setup, options, and troubleshooting.
+
+---
+
+## Implementation status
+
+| Milestone | Status |
+|-----------|--------|
+| Project setup & data folder | Done |
+| Preprocessing & EDA | Done (`src/preprocessing.py`) |
+| Model training (4 algorithms) | Done (`src/train.py`) |
+| Evaluation & visualizations | Done (`src/evaluate.py`) |
+
+---
+
+## Project Structure
+
+```text
+stroke-risk-prediction/
+│
+├── data/                    # Kaggle dataset storage (see data/README.md)
+│   └── stroke_dataset.csv
+│
+├── models/                  # Saved preprocessor and trained checkpoints
+│   ├── preprocessor.joblib
+│   ├── best_model.joblib
+│   └── *.joblib
+│
+├── results/                 # Metrics, plots, comparison tables
+│   ├── model_comparison.csv
+│   ├── confusion_matrix_*.png
+│   └── roc_curve_*.png
+│
+├── notebooks/               # Optional Jupyter notebooks
+├── docs/
+│   └── MODEL_DOCUMENTATION.md
+│
+├── src/
+│   ├── config.py            # Paths and hyperparameters
+│   ├── data_loader.py       # Load CSV from data/
+│   ├── download_data.py     # Kaggle / HTTP download
+│   ├── preprocessing.py     # Clean, encode, SMOTE, EDA
+│   ├── train.py             # Train & compare models
+│   ├── evaluate.py          # Metrics and plots
+│   └── models/
+│       └── stroke_models.py # Model definitions & tuning grids
+│
+├── main.py                  # Main entry point
+├── requirements.txt
+├── HOW_TO_RUN.md            # Step-by-step run instructions
+└── README.md
+```
+
+---
+
 ## Milestone 1: Project Setup and Dataset Preparation
 
 ### Tasks
@@ -99,26 +161,7 @@ Develop an AI-powered stroke risk prediction system capable of identifying high-
 - XGBoost
 - Matplotlib
 - Seaborn
-- Jupyter Notebook
-
----
-
-## Project Structure
-
-```text
-stroke-risk-prediction/
-│
-├── data/
-│   └── stroke_dataset.csv
-│
-├── notebooks/
-├── models/
-├── results/
-├── src/
-├── requirements.txt
-├── README.md
-└── main.py
-```
+- imbalanced-learn
 
 ---
 

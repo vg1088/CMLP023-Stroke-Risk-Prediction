@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data (keep structure, ignore large/raw downloads)
+data/*.csv
+data/*.zip
+!data/README.md
+
+# Generated artifacts
+models/*.pkl
+models/*.joblib
+results/*
+!results/.gitkeep
+
+# Kaggle credentials
+.kaggle/
+
+# OS
+.DS_Store
+Thumbs.db
